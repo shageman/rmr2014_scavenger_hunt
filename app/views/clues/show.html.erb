@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clue.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @clue.description %>
+</p>
+
+<%= link_to 'Edit', edit_clue_path(@clue, auth: "abc") %> |
+<%= link_to 'Back', clues_path(auth: "abc") %>
