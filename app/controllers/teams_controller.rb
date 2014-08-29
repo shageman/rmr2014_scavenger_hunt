@@ -15,9 +15,10 @@ class TeamsController < ApplicationController
 
   def create
     if @team = Team.first_or_create(team_params)
-      redirect_to @team, notice: 'Team was successfully created.'
+      redirect_to @team
     else
-      render action: 'new'
+      redirect_to action: :new, notice: 'Gotta enter a team name!'
+
     end
   end
 

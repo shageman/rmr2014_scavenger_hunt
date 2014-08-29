@@ -1,6 +1,3 @@
-p id="notice"
-  = notice
+p.lead= @clue.description
 
-= @clue.description
-
-p= link_to "Done! Give me the next one!", @team, auth: "abc"
+= link_to "Done! Give me the next one!", @team, auth: "abc", class: "btn btn-large btn-primary btn-block"

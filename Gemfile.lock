@@ -36,6 +36,8 @@ GEM
     coffee-script-source (1.8.0)
     erubis (2.7.0)
     execjs (2.2.1)
+    flatstrap-rails (0.3.0.2)
+      twitter-bootstrap-rails (~> 2.2.6)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (1.5.3)
@@ -103,6 +105,11 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.3.0)
       coffee-rails
+    twitter-bootstrap-rails (2.2.8)
+      actionpack (>= 3.1)
+      execjs
+      rails (>= 3.1)
+      railties (>= 3.1)
     tzinfo (0.3.41)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
@@ -113,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  flatstrap-rails
   jbuilder (~> 1.2)
   jquery-rails
   pg

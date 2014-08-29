@@ -1,3 +1,25 @@
-h1 New team
+div class="row"
+  div class="col-md-12"
+    h2 What's your team?
 
-= render 'form'
+
+p id="notice"
+  =notice
+
+= form_for(@team) do |f|
+  - if @team.errors.any?
+    div id="error_explanation"
+      h2
+        = pluralize(@team.errors.count, "error")
+        prohibited this team from being saved:
+
+      ul
+        - @team.errors.full_messages.each do |msg|
+          li= msg
+
+  div class="row"
+    div class="col-md-12"
+      = f.text_field :name, class: "input-xlarge"
+  div class="row"
+    div class="col-md-12"
+      = f.submit "Go!",  class: "btn btn-large btn-success btn-block"
