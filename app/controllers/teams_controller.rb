@@ -6,19 +6,28 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @clue = Clue.all.sample
+    @clue = TeamClues.next_clue_for!(@team.id)
   end
 
   def new
     @team = Team.new
   end
 
+  def next
+    redirect_to teams_url
+  end
+
   def create
-    if @team = Team.first_or_create(team_params)
-      redirect_to @team
+    @team = Team.find_by_name(team_params["name"])
+    if !@team.present?
+      @team = Team.new(team_params)
+      @team.clue_order = TeamClues.clue_ids_in_random_order.join(",")
+      @team.current_clue_index = 0
+    end
+    if @team.save
+      redirect_to(@team)
     else
       redirect_to action: :new, notice: 'Gotta enter a team name!'
-
     end
   end
 

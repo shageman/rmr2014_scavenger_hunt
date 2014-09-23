@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Clue.create! name: "name1", description: "description1"
+Clue.create! name: "name2", description: "description2"
+Clue.create! name: "name3", description: "description3"
+Clue.create! name: "name4", description: "description4"

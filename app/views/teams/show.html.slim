@@ -1,3 +1,15 @@
-p.lead= @clue.description
+div class="row"
+  div class="col-md-12 text-justify"
 
-= link_to "Done! Give me the next one!", @team, auth: "abc", class: "btn btn-large btn-primary"
+    p.lead="Clue No.#{@team.current_clue_index + 1}"
+    p.lead= @clue.description
+
+    br
+
+    | Don't forget to tweet your group's proof photo! Needed hashtags: <mark>#rmr2014scavenger</mark> and <mark>your team's hashtag</mark>
+
+div class="row"
+  div class="col-md-12 text-center"
+
+    br
+    = link_to "Done! Next clue!", @team, auth: "abc", class: "btn btn-large btn-primary"

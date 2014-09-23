@@ -3,17 +3,14 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
 
-
-group :development do
-  gem 'sqlite3'
-end
+gem 'pg'
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
-gem "flatstrap-rails"
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
