@@ -3,7 +3,7 @@ class TeamClues
     hh_clue_ids = Clue.where("clue_type is NOT NULL").load.map(&:id).shuffle
     other_clue_ids = Clue.where("clue_type is NULL").load.map(&:id).shuffle
 
-    a = other_clue_ids.each_slice(other_clue_ids.length / hh_clue_ids.length).to_a
+    a = other_clue_ids.each_slice((other_clue_ids.length / hh_clue_ids.length.to_f).ceil).to_a
     b = hh_clue_ids.each_slice(1).to_a
 
     c = []
