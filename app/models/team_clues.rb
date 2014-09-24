@@ -11,7 +11,7 @@ class TeamClues
       x = other_clue_list + b[index]
       c << x.shuffle
     end
-    c
+    c.flatten
   end
 
   def self.next_clue_for!(team_id)
