@@ -31,4 +31,10 @@ class TeamClues
     clue_ids_ordered = team.clue_order.split(",")
     Clue.find(clue_ids_ordered[team.current_clue_index])
   end
+
+  def self.last_clue?(team_id, clue_id)
+    team = Team.find(team_id)
+    clue_ids_ordered = team.clue_order.split(",")
+    clue_ids_ordered.last.to_i == clue_id
+  end
 end
