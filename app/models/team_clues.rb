@@ -3,6 +3,9 @@ class TeamClues
     hh_clue_ids = Clue.where(clue_type: "b").load.map(&:id).shuffle
     other_clue_ids = Clue.where(clue_type: "hh").load.map(&:id).shuffle
 
+    p hh_clue_ids
+    p other_clue_ids
+
     a = other_clue_ids.each_slice((other_clue_ids.length / hh_clue_ids.length.to_f).ceil).to_a
     b = hh_clue_ids.each_slice(1).to_a
 
