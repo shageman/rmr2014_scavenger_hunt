@@ -25,4 +25,10 @@ class TeamClues
 
     Clue.find(clue_ids_ordered[next_clue_index])
   end
+
+  def self.clue_for_team(team_id)
+    team = Team.find(team_id)
+    clue_ids_ordered = team.clue_order.split(",")
+    Clue.find(clue_ids_ordered[team.current_clue_index])
+  end
 end

@@ -1,12 +1,12 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :set_team, only: [:show, :edit, :update, :destroy, :next]
 
   def index
     redirect_to action: :new
   end
 
   def show
-    @clue = TeamClues.next_clue_for!(@team.id)
+    @clue = TeamClues.clue_for_team(@team.id)
   end
 
   def new
@@ -14,7 +14,8 @@ class TeamsController < ApplicationController
   end
 
   def next
-    redirect_to teams_url
+    TeamClues.next_clue_for!(@team.id)
+    redirect_to team_url(id: @team.id)
   end
 
   def create
