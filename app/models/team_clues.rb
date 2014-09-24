@@ -1,7 +1,7 @@
 class TeamClues
   def self.clue_ids_in_random_order
-    hh_clue_ids = Clue.where(clue_type: "b").load.map(&:id).shuffle
-    other_clue_ids = Clue.where(clue_type: "hh").load.map(&:id).shuffle
+    hh_clue_ids = Clue.where(clue_type: "hh").load.map(&:id).shuffle
+    other_clue_ids = Clue.where(clue_type: "b").load.map(&:id).shuffle
 
     p hh_clue_ids
     p other_clue_ids
