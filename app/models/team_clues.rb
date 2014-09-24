@@ -6,6 +6,9 @@ class TeamClues
     a = other_clue_ids.each_slice((other_clue_ids.length / hh_clue_ids.length.to_f).ceil).to_a
     b = hh_clue_ids.each_slice(1).to_a
 
+    p a
+    p b
+
     c = []
     a.each_with_index do |other_clue_list, index|
       x = other_clue_list + b[index]
